@@ -11,9 +11,9 @@ crd=table(df2$Gender,df2$Credential) #Create table with two columns both are fac
 crd[1,]/crd[2,] #Ratio of Genders across Credential
 df4=read.csv("Physician_Compare_2015_Group_Public_Reporting___Performance_Scores.csv")
 st2=table(df4$State)
-prfnce=all1[which(all1$Measure.Performance.Rate>=10),]
-sd(prfnce$Measure.Performance.Rate)
 p1=merge(df1,df2,by=c("NPI","PAC.ID"))
+prfnce=p1[which(p1$Measure.Performance.Rate>=10),]
+sd(prfnce$Measure.Performance.Rate)
 p3=p1[which(p1$Graduation.year>=1973 & p1$Graduation.year<=2003 & p1$Measure.Performance.Rate>=10 $p1$Credential=="MD"),]
 yr_mn_prfrnce=by(p3$Measure.Performance.Rate, p3$Graduation.year, mean)
 m1=lm(p3$Measure.Performance.Rate ~ p3$Graduation.year)
