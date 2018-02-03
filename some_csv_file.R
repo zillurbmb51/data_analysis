@@ -1,4 +1,5 @@
 library(plyr)
+library(reshape)
 options(digits=10)  #Precision upto 10 digits
 df1=read.csv("Physician_Compare_2015_Individual_EP_Public_Reporting___Performance_Scores.csv")
 a1=count(df1$NPI) #Create table with occurance of each label
